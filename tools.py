@@ -5,7 +5,7 @@ from langchain_core.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from mypy_extensions import TypedDict
 
-from retriver import get_retriever
+from retriever import get_retriever
 
 
 class Med(TypedDict):
