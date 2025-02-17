@@ -31,10 +31,10 @@ def load_pdf():
     print(documents)
     return documents
 
-def get_retriever():
+def get_retriever(k=4):
     embeddings = GoogleGenerativeAIEmbeddings(model='models/text-embedding-004')
     vector_store = PineconeVectorStore.from_existing_index(index_name, embeddings)
-    retriever = vector_store.as_retriever()
+    retriever = vector_store.as_retriever(k=k)
     return retriever
 
 def split_docs(documents: List[Document]):

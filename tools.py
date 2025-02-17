@@ -52,7 +52,7 @@ def search_medicine(query: str, city: str="Indore", max_items: int=5) -> List[Me
                       'price': item.get('prices', {}).get('discounted_price'),
                       'rx_required': item.get('rx_required'),
                       'image': item.get('image'),
-                      'url': "http://1mg.com/"+item.get('url') ,
+                      'url': "http://1mg.com"+item.get('url') ,
                       'ratings': item.get('ratings', {})['average_rating'] if item.get('ratings', {}) is not None else None
                       }
             print(result)
@@ -70,7 +70,7 @@ def medical_search(query: str) -> str:
     Returns:
         str - Knowledge context
     """
-    docs = get_retriever().invoke(query)
+    docs = get_retriever(k=5).invoke(query)
     context = [doc.page_content for doc in docs]
     print(context)
     return "\n".join(context)

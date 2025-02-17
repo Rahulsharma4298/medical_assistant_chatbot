@@ -2,7 +2,8 @@ import streamlit as st
 from graph import chat
 
 
-st.title("🧑‍⚕️ Medical Assistant")
+st.set_page_config(page_title="Medical Assistant Chatbot")
+st.title("🧑‍⚕️ :blue[Medical Assistant]")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []

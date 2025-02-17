@@ -25,6 +25,10 @@ def medical_assistant(state: State):
     Keep the answer detailed but concise. 
     Format the response as Markdown bullet points.
     Also help them with the medicines they are looking for.
+    - Example input1: xyz tablet
+    - Output: Call the tool and return the output.
+    - Example input2: Uric Acid
+    - Output: Search the knowledge base and return output based on context. 
     Question: """
     question = state['messages']
     print(question)
